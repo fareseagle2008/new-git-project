@@ -1,3 +1,26 @@
+def pulling(b, r):
+    while r > 0:
+        if r >= 100:
+            r -= 100
+            b -= 100
+            print ("give 100")
+        elif r >= 50:
+            r -= 50
+            b -= 50
+            print ("give 50")
+        elif r >= 10:
+            r -= 10
+            b -= 10
+            print ("give 10")
+        elif r >= 5:
+            r -= 5
+            b -= 5
+            print ("give 5")
+        else:
+            r = 0
+
+                
+    return b
 
 
 def withdraw(balance, request):
@@ -7,20 +30,14 @@ def withdraw(balance, request):
     elif request < 0:
         print("More than zero plz!")
     else:
-        while request > 0:
+        return pulling(balance, request)
 
-            if request >= 5:
-                request -= 5
-                balance = balance - 5
-            else:
-                request = 0
-                
-        return balance
+            
 
 
 
 balance = 500
 balance = withdraw(balance, 250)
-balance = withdraw(balance, 249)
+balance = withdraw(balance, 255)
 
 print balance
