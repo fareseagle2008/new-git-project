@@ -6,7 +6,8 @@ class ATM(object):
         self.balance = balance
 
     def pulling(self, request):
-        print self.bankName
+        print "your bank is " + self.bankName
+        print "your Current Balance is " + str(self.balance)
         while request > 0:
             if request >= 100:
                 request -= 100
@@ -24,6 +25,14 @@ class ATM(object):
                 request -= 5
                 self.balance -= 5
                 print ("give 5")
+            elif request >= 2:
+                request -= 2
+                self.balance -= 2
+                print ("give 2")
+            elif request >= 1:
+                request -= 1
+                self.balance -= 1
+                print ("give 1")
             else:
                 request = 0
         return self.balance
