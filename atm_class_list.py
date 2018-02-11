@@ -11,12 +11,18 @@ class ATM:
         print "your Current Balance is " + str(self.balance)
         print "=============================================="
         self.withdrawals_list.append(request)
-        accepted_notes = [100, 50, 10, 5, 2, 1]
+        accepted_notes = [100, 50, 10, 5]
         self.balance -= request
         for note in accepted_notes:
             while request >= note:
                 request -= note
                 print "give " + str(note)
+            if request < 5 and request > 0:
+                print "give " + str(request)
+                request = 0
+                
+
+                
           
 
         return self.balance
@@ -65,12 +71,12 @@ atm1 = ATM("Islamic Bank", 1000)
 atm2 = ATM("bemo", 3000)
 print atm1.withdraw(500)
 print atm1.withdraw(400)
-print atm1.withdraw(101)
+print atm1.withdraw(97)
 
 atm1.show_withdrawals()
 
 print atm2.withdraw(500)
 print atm2.withdraw(400)
-print atm2.withdraw(2000)
+print atm2.withdraw(299)
 
 atm2.show_withdrawals()
