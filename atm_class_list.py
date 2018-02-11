@@ -17,14 +17,9 @@ class ATM:
             while request >= note:
                 request -= note
                 print "give " + str(note)
-            if request < 5 and request > 0:
+            if request < 5:
                 print "give " + str(request)
                 request = 0
-                
-
-                
-          
-
         return self.balance
 
 
@@ -55,17 +50,6 @@ class ATM:
             return "Your Current Balance is "+ str(self.pulling(request))
             print "=============================================="
         
-
-
-
-
-
-
-
-
-            
-
-
 
 atm1 = ATM("Islamic Bank", 1000)
 atm2 = ATM("bemo", 3000)
